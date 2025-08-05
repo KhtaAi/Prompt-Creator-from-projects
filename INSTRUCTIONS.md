@@ -15,6 +15,24 @@ This file provides a detailed explanation of all the command-line flags availabl
     prompt-creator --markdown
     ```
 
+### `--remove-blanks`
+
+-   **Purpose:** Removes all empty lines (or lines with only whitespace) from the content of the included files.
+-   **Behavior:** This helps to create a more compact prompt by reducing unnecessary vertical space.
+-   **Usage:**
+    ```bash
+    prompt-creator --remove-blanks
+    ```
+
+### `--include-summary`
+
+-   **Purpose:** Prepends a summary file to the beginning of the generated prompt.
+-   **Behavior:** The tool will look for a file named `summary.md` inside the `prompt-creator` configuration directory. If found, its content will be placed at the top of the final prompt. If the file is not found, a warning will be displayed.
+-   **Usage:**
+    ```bash
+    prompt-creator --include-summary
+    ```
+
 ### `--upgrade`
 
 -   **Purpose:** Upgrades the `prompt-creator` package to the latest version from the GitHub repository.
@@ -45,6 +63,24 @@ This file provides a detailed explanation of all the command-line flags availabl
 -   **نحوه استفاده:**
     ```bash
     prompt-creator --markdown
+    ```
+
+### `--remove-blanks`
+
+-   **هدف:** تمام خطوط خالی (یا خطوطی که فقط شامل فضای خالی هستند) را از محتوای فایل‌های گنجانده شده حذف می‌کند.
+-   **رفتار:** این فلگ با کاهش فضای خالی عمودی، به ساخت یک پرامپت فشرده‌تر کمک می‌کند.
+-   **نحوه استفاده:**
+    ```bash
+    prompt-creator --remove-blanks
+    ```
+
+### `--include-summary`
+
+-   **هدف:** یک فایل خلاصه را به ابتدای پرامپت تولید شده اضافه می‌کند.
+-   **رفتار:** ابزار به دنبال فایلی به نام `summary.md` در داخل پوشه پیکربندی `prompt-creator` می‌گردد. اگر فایل پیدا شود، محتوای آن در بالای پرامپت نهایی قرار می‌گیرد. اگر فایل پیدا نشود، یک هشدار نمایش داده می‌شود.
+-   **نحوه استفاده:**
+    ```bash
+    prompt-creator --include-summary
     ```
 
 ### `--upgrade`
