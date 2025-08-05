@@ -200,7 +200,7 @@ def create_prompt(root_dir: Path, config_dir: Path, args):
     try:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write("".join(output_content))
-        print(f"\n✅ Prompt successfully created at: {output_path.resolve()}")
+        print(f"\nPrompt successfully created at: {output_path.resolve()}")
     except Exception as e:
         print(f"\nError writing output file: {e}", file=sys.stderr)
 
