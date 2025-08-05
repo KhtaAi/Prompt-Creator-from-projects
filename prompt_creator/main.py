@@ -63,7 +63,7 @@ def check_empty_config_files(config_dir: Path):
     """بررسی می‌کند که آیا فایل‌های پیکربندی خالی هستند و از کاربر تاییدیه می‌گیرد."""
     empty_files = []
     # فقط فایل‌های اصلی که انتظار محتوا دارند بررسی می‌شوند
-    for filename in [WHITELIST_filename, TREE_IGNORE_FILENAME]:
+    for filename in [WHITELIST_FILENAME, TREE_IGNORE_FILENAME]:
         filepath = config_dir / filename
         if filepath.exists() and filepath.stat().st_size == 0:
             empty_files.append(filename)
