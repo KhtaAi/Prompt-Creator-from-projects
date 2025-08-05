@@ -12,6 +12,8 @@ This tool is configured via a `prompt-creator` directory in your project's root,
 
 Since this is a private repository, you need to use a Personal Access Token (PAT) or an SSH key to install the package via `pip`.
 
+**On Windows:** These commands work in terminals like Command Prompt or PowerShell, but you must install **[Git for Windows](https://git-scm.com/download/win)** first.
+
 ### Using a Personal Access Token (PAT)
 
 1.  [Generate a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) with `repo` scope.
@@ -77,6 +79,8 @@ If any of these files are empty, the tool will warn you before proceeding.
 ## 🚀 نصب
 
 از آنجایی که این یک ریپازیتوری خصوصی است، برای نصب بسته از طریق `pip` باید از یک توکن دسترسی شخصی (PAT) یا کلید SSH استفاده کنید.
+
+**نصب در ویندوز:** این دستورات در ترمینال‌های ویندوز مانند Command Prompt یا PowerShell نیز کار می‌کنند، اما ابتدا باید **[Git for Windows](https://git-scm.com/download/win)** را نصب کنید.
 
 ### استفاده از توکن دسترسی شخصی (PAT)
 
