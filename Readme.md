@@ -110,9 +110,9 @@ pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
 ۱. یک [PAT جدید](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) با دسترسی `repo` بسازید.
 ۲. دستور زیر را اجرا کرده و `<YOUR_PAT>` را با توکن خود جایگزین کنید:
 
-    ```bash
-    pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
-    ```
+```bash
+pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+```
 
 **۲. استفاده از SSH:**
 
