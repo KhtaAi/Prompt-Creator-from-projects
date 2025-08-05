@@ -9,7 +9,7 @@ setup(
     description='A tool to create prompts from project files based on specified rules.',
     long_description=open('Readme.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/YourUsername/YourRepoName',  # URL ریپازیتوری خود را اینجا وارد کنید
+    url='https://github.com/KhtaAi/Prompt-Creator-from-projects',
     entry_points={
         'console_scripts': [
             'prompt-creator=prompt_creator.main:run',

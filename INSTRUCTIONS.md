@@ -18,8 +18,8 @@ This file provides a detailed explanation of all the command-line flags availabl
 ### `--upgrade`
 
 -   **Purpose:** Upgrades the `prompt-creator` package to the latest version from the GitHub repository.
--   **Behavior:** This command uses `pip` to fetch and install the latest commit from the `main` branch of the repository specified in the `GITHUB_REPO_URL` variable within the script.
--   **Note:** For this to work with a private repository, your environment must be configured with access credentials (e.g., a Personal Access Token in the URL or a configured SSH key).
+-   **Behavior:** This command uses `pip` to fetch and install the latest commit from the `main` branch of the repository.
+-   **Note:** If the repository is private, your environment must be configured with access credentials (e.g., a globally configured SSH key or a credential manager that stores your PAT) for the upgrade to work seamlessly.
 -   **Usage:**
     ```bash
     prompt-creator --upgrade
@@ -50,8 +50,8 @@ This file provides a detailed explanation of all the command-line flags availabl
 ### `--upgrade`
 
 -   **هدف:** بسته `prompt-creator` را به آخرین نسخه موجود در ریپازیتوری گیت‌هاب ارتقا می‌دهد.
--   **رفتار:** این دستور از `pip` برای دریافت و نصب آخرین کامیت از شاخه `main` ریپازیتوری که در متغیر `GITHUB_REPO_URL` داخل اسکریپت مشخص شده، استفاده می‌کند.
--   **نکته:** برای اینکه این دستور با یک ریپازیتوری خصوصی کار کند، محیط شما باید با اطلاعات دسترسی (مانند توکن دسترسی شخصی در URL یا کلید SSH تنظیم شده) پیکربندی شده باشد.
+-   **رفتار:** این دستور از `pip` برای دریافت و نصب آخرین کامیت از شاخه `main` ریپازیتوری استفاده می‌کند.
+-   **نکته:** اگر ریپازیتوری خصوصی باشد، محیط شما باید با اطلاعات دسترسی (مانند کلید SSH یا یک مدیریت‌کننده اعتبار که توکن شما را ذخیره کرده) پیکربندی شده باشد تا ارتقا به درستی کار کند.
 -   **نحوه استفاده:**
     ```bash
     prompt-creator --upgrade

@@ -17,7 +17,7 @@ OUTPUT_FILENAME_TXT = "project_prompt.txt"
 
 # لطفا این مقادیر را با اطلاعات صحیح ریپازیتوری خود جایگزین کنید
 # این برای دستور --upgrade استفاده می‌شود
-GITHUB_REPO_URL = "git+https://github.com/YourUsername/YourRepoName.git"
+GITHUB_REPO_URL = "git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git"
 
 # --- توابع اصلی برنامه ---
 

@@ -10,26 +10,37 @@ This tool is configured via a `prompt-creator` directory in your project's root,
 
 ## 🚀 Installation
 
-Since this is a private repository, you need to use a Personal Access Token (PAT) or an SSH key to install the package via `pip`.
+Installation instructions vary depending on whether the repository is public or private.
 
 **On Windows:** These commands work in terminals like Command Prompt or PowerShell, but you must install **[Git for Windows](https://git-scm.com/download/win)** first.
 
-### Using a Personal Access Token (PAT)
+### For Public Repositories
 
-1.  [Generate a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) with `repo` scope.
-2.  Replace `<YOUR_USERNAME>`, `<YOUR_REPONAME>`, and `<YOUR_PAT>` in the command below.
-3.  Run the command in your terminal:
+If the repository is public, you can install it with this simple command:
 
 ```bash
-pip install git+https://<YOUR_PAT>@github.com/<YOUR_USERNAME>/<YOUR_REPONAME>.git
+pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
-### Using SSH
+### For Private Repositories
+
+If the repository is set to private, you need to authenticate using a Personal Access Token (PAT) or an SSH key.
+
+**1. Using a Personal Access Token (PAT):**
+
+1.  [Generate a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) with `repo` scope.
+2.  Run the command below, replacing `<YOUR_PAT>` with your token:
+
+    ```bash
+    pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+    ```
+
+**2. Using SSH:**
 
 If you have SSH keys configured with your GitHub account, you can use the SSH URL:
 
 ```bash
-pip install git+ssh://git@github.com/<YOUR_USERNAME>/<YOUR_REPONAME>.git
+pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
 ## ⚙️ Usage
@@ -78,26 +89,37 @@ If any of these files are empty, the tool will warn you before proceeding.
 
 ## 🚀 نصب
 
-از آنجایی که این یک ریپازیتوری خصوصی است، برای نصب بسته از طریق `pip` باید از یک توکن دسترسی شخصی (PAT) یا کلید SSH استفاده کنید.
+دستورالعمل نصب بسته به عمومی یا خصوصی بودن ریپازیتوری متفاوت است.
 
 **نصب در ویندوز:** این دستورات در ترمینال‌های ویندوز مانند Command Prompt یا PowerShell نیز کار می‌کنند، اما ابتدا باید **[Git for Windows](https://git-scm.com/download/win)** را نصب کنید.
 
-### استفاده از توکن دسترسی شخصی (PAT)
+### برای ریپازیتوری‌های عمومی (Public)
 
-۱. یک [PAT جدید](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) با دسترسی `repo` بسازید.
-۲. مقادیر `<YOUR_USERNAME>`، `<YOUR_REPONAME>` و `<YOUR_PAT>` را در دستور زیر با اطلاعات خود جایگزین کنید.
-۳. دستور را در ترمینال خود اجرا کنید:
+اگر ریپازیتوری عمومی باشد، می‌توانید آن را با این دستور ساده نصب کنید:
 
 ```bash
-pip install git+https://<YOUR_PAT>@github.com/<YOUR_USERNAME>/<YOUR_REPONAME>.git
+pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
-### استفاده از SSH
+### برای ریپازیتوری‌های خصوصی (Private)
+
+اگر ریپازیتوری خصوصی باشد، برای نصب باید با استفاده از توکن دسترسی شخصی (PAT) یا کلید SSH احراز هویت کنید.
+
+**۱. استفاده از توکن دسترسی شخصی (PAT):**
+
+۱. یک [PAT جدید](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) با دسترسی `repo` بسازید.
+۲. دستور زیر را اجرا کرده و `<YOUR_PAT>` را با توکن خود جایگزین کنید:
+
+    ```bash
+    pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+    ```
+
+**۲. استفاده از SSH:**
 
 اگر کلیدهای SSH را برای حساب گیت‌هاب خود تنظیم کرده‌اید، می‌توانید از آدرس SSH استفاده کنید:
 
 ```bash
-pip install git+ssh://git@github.com/<YOUR_USERNAME>/<YOUR_REPONAME>.git
+pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
 ## ⚙️ نحوه استفاده
