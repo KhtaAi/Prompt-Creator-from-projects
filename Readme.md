@@ -1,83 +1,70 @@
+
 # Prompt Creator
 
-A versatile command-line tool to generate detailed prompts from your project's source code. It creates a project summary including a directory tree and the content of whitelisted files, which is ideal for providing context to Large Language Models (LLMs).
+ابزاری برای تولید پرامپت از پروژه‌های برنامه‌نویسی با قابلیت انتخاب فایل‌ها و پوشه‌ها به کمک فایل‌های پیکربندی.
 
-This tool is configured via a `prompt-creator` directory in your project's root, where you can specify which files to include (`.wl`), which to ignore in the tree (`.treeignore`), and which to exclude from content processing (`.bl`).
+## نصب
 
----
-
-# English
-
-## 🚀 Installation
-
-Installation instructions vary depending on whether the repository is public or private.
-
-**On Windows:** These commands work in terminals like Command Prompt or PowerShell, but you must install **[Git for Windows](https://git-scm.com/download/win)** first.
-
-### For Public Repositories
-
-If the repository is public, you can install it with this simple command:
-
+### نصب از گیتهاب (عمومی)
 ```bash
 pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
-### For Private Repositories
-
-If the repository is set to private, you need to authenticate using a Personal Access Token (PAT) or an SSH key.
-
-**1. Using a Personal Access Token (PAT):**
-
-1.  [Generate a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) with `repo` scope.
-2.  Run the command below, replacing `<YOUR_PAT>` with your token:
-
-    ```bash
-    pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
-    ```
-
-**2. Using SSH:**
-
-If you have SSH keys configured with your GitHub account, you can use the SSH URL:
-
+### نصب از گیتهاب (خصوصی)
+```bash
+pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+```
+یا با SSH:
 ```bash
 pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
-## ⚙️ Usage
+## استفاده سریع
 
-After installation, the `prompt-creator` command will be available globally in your terminal.
+1. به ریشه پروژه بروید.
+2. دستور زیر را اجرا کنید:
+   ```bash
+   prompt-creator --markdown
+   ```
+3. پوشه `prompt-creator` و فایل‌های `.wl`, `.bl`, `.treeignore` ساخته می‌شوند.
+4. الگوهای مورد نظر را در این فایل‌ها قرار دهید و مجدد دستور را اجرا کنید.
 
-### 1. Generating a Prompt
+### مثال فایل .wl
+```
+src/*
+main.py
+README.md
+```
 
-1.  Navigate to the root directory of the project you want to create a prompt for.
-2.  Run the command:
-    ```bash
-    prompt-creator
-    ```
-    Or for Markdown format:
-    ```bash
-    prompt-creator --markdown
-    ```
-3.  The first time you run it, a `prompt-creator` directory will be created in your project root, containing three empty files: `.wl`, `.bl`, and `.treeignore`.
-4.  Populate these files with your desired rules (see **Configuration** below).
-5.  Run the command again to generate the prompt based on your rules. The output will be saved inside the `prompt-creator` directory.
+### مثال فایل .bl
+```
+__pycache__
+*.pyc
+node_modules
+```
 
-### 2. Configuration
+### مثال فایل .treeignore
+```
+node_modules
+.git
+```
 
-The behavior of the tool is controlled by three files inside the `prompt-creator` directory:
+## خروجی
 
--   `.wl` (Whitelist): Specify files and directories to be included in the prompt. Add one pattern per line (e.g., `src/main.py`, `components/`).
--   `.bl` (Blacklist): Specify files and directories whose content should be ignored.
--   `.treeignore`: Specify files and directories to be excluded from the project tree structure view (e.g., `node_modules`, `.git`).
+خروجی در فایل `project_prompt.md` یا `project_prompt.txt` در پوشه `prompt-creator` ذخیره می‌شود.
 
-If any of these files are empty, the tool will warn you before proceeding.
+## مدیریت بسته
 
-### 3. Managing the Package
+- ارتقا:
+  ```bash
+  prompt-creator --upgrade
+  ```
+- حذف:
+  ```bash
+  prompt-creator --uninstall
+  ```
 
--   **Upgrade:** To get the latest version from your repository:
-    ```bash
-    prompt-creator --upgrade
-    ```
+---
 -   **Uninstall:** To remove the package from your system:
     ```bash
     prompt-creator --uninstall
