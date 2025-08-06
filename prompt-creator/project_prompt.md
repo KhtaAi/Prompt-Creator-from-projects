@@ -6,7 +6,6 @@ Project Tree (root: Prompt-Creator-from-projects):
 │   ├── __init__.py
 │   └── main.py
 ├── .gitignore
-├── .treeignore
 ├── INSTRUCTIONS.md
 ├── Prompt-Creator-from-projects.code-workspace
 ├── Readme.md
@@ -302,7 +301,6 @@ if __name__ == "__main__":
 ## File: `Readme.md`
 
 ```md
-
 # Prompt Creator
 
 ابزاری برای تولید پرامپت از پروژه‌های برنامه‌نویسی با قابلیت انتخاب فایل‌ها و پوشه‌ها به کمک فایل‌های پیکربندی.
@@ -310,15 +308,19 @@ if __name__ == "__main__":
 ## نصب
 
 ### نصب از گیتهاب (عمومی)
+
 ```bash
 pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
 ### نصب از گیتهاب (خصوصی)
+
 ```bash
 pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
+
 یا با SSH:
+
 ```bash
 pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
@@ -334,6 +336,7 @@ pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 4. الگوهای مورد نظر را در این فایل‌ها قرار دهید و مجدد دستور را اجرا کنید.
 
 ### مثال فایل .wl
+
 ```
 src/*
 main.py
@@ -341,6 +344,7 @@ README.md
 ```
 
 ### مثال فایل .bl
+
 ```
 __pycache__
 *.pyc
@@ -348,6 +352,7 @@ node_modules
 ```
 
 ### مثال فایل .treeignore
+
 ```
 node_modules
 .git
@@ -369,10 +374,11 @@ node_modules
   ```
 
 ---
--   **Uninstall:** To remove the package from your system:
-    ```bash
-    prompt-creator --uninstall
-    ```
+
+- **Uninstall:** To remove the package from your system:
+  ```bash
+  prompt-creator --uninstall
+  ```
 
 ---
 
@@ -421,13 +427,13 @@ pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 
 ۱. به پوشه ریشه پروژه‌ای که می‌خواهید برای آن پرامپت بسازید، بروید.
 ۲. دستور زیر را اجرا کنید:
-    ```bash
+`bash
     prompt-creator
-    ```
-    یا برای فرمت Markdown:
-    ```bash
+    `
+یا برای فرمت Markdown:
+`bash
     prompt-creator --markdown
-    ```
+    `
 ۳. بار اولی که دستور را اجرا می‌کنید، یک پوشه به نام `prompt-creator` در ریشه پروژه شما ایجاد می‌شود که شامل سه فایل خالی است: `.wl`، `.bl` و `.treeignore`.
 ۴. این فایل‌ها را با قوانین مورد نظر خود پر کنید (بخش **پیکربندی** را ببینید).
 ۵. دستور را دوباره اجرا کنید تا پرامپت بر اساس قوانین شما ساخته شود. فایل خروجی در داخل پوشه `prompt-creator` ذخیره خواهد شد.
@@ -436,22 +442,22 @@ pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 
 رفتار ابزار توسط سه فایل داخل پوشه `prompt-creator` کنترل می‌شود:
 
--   `.wl` (لیست سفید): فایل‌ها و پوشه‌هایی که باید در پرامپت گنجانده شوند را مشخص کنید. در هر خط یک الگو وارد کنید (مثلاً `src/main.py` یا `components/`).
--   `.bl` (لیست سیاه): فایل‌ها و پوشه‌هایی که محتوای آن‌ها باید نادیده گرفته شود را مشخص کنید.
--   `.treeignore`: فایل‌ها و پوشه‌هایی که باید از نمایش ساختار درختی پروژه حذف شوند را مشخص کنید (مانند `node_modules` یا `.git`).
+- `.wl` (لیست سفید): فایل‌ها و پوشه‌هایی که باید در پرامپت گنجانده شوند را مشخص کنید. در هر خط یک الگو وارد کنید (مثلاً `src/main.py` یا `components/`).
+- `.bl` (لیست سیاه): فایل‌ها و پوشه‌هایی که محتوای آن‌ها باید نادیده گرفته شود را مشخص کنید.
+- `.treeignore`: فایل‌ها و پوشه‌هایی که باید از نمایش ساختار درختی پروژه حذف شوند را مشخص کنید (مانند `node_modules` یا `.git`).
 
 اگر هر یک از این فایل‌ها خالی باشد، ابزار قبل از ادامه به شما هشدار خواهد داد.
 
 ### ۳. مدیریت بسته
 
--   **ارتقا (Upgrade):** برای دریافت آخرین نسخه از ریپازیتوری:
-    ```bash
-    prompt-creator --upgrade
-    ```
--   **حذف (Uninstall):** برای حذف کامل بسته از سیستم:
-    ```bash
-    prompt-creator --uninstall
-    ```
+- **ارتقا (Upgrade):** برای دریافت آخرین نسخه از ریپازیتوری:
+  ```bash
+  prompt-creator --upgrade
+  ```
+- **حذف (Uninstall):** برای حذف کامل بسته از سیستم:
+  ```bash
+  prompt-creator --uninstall
+  ```
 
 ```
 
