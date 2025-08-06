@@ -15,3 +15,7 @@ venv/
 # IDE folders
 .vscode/
 .idea/
+
+
+Prompt-Creator-from-projects.code-workspace
+prompt-creator
