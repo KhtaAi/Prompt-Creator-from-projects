@@ -1,29 +1,78 @@
 # Prompt Creator
+A tool for generating prompts from programming projects, allowing you to select files and folders via config files and produce a structured output for LLMs or documentation.
 
-ابزاری برای تولید پرامپت از پروژه‌های برنامه‌نویسی با قابلیت انتخاب فایل‌ها و پوشه‌ها به کمک فایل‌های پیکربندی.
-
-## نصب
-
-### نصب از گیتهاب (عمومی)
-
+## Installation
+### Install from GitHub (Public)
 ```bash
 pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
-
-### نصب از گیتهاب (خصوصی)
-
+### Install from GitHub (Private)
 ```bash
 pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
+Or with SSH:
+```bash
+pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
+```
 
+## Quick Start
+1. Go to your project root.
+2. Run:
+   ```bash
+   prompt-creator --markdown
+   ```
+3. The `prompt-creator` folder and `.wl`, `.bl`, `.treeignore` files will be created.
+4. Add your desired patterns to these files and run the command again.
+
+### Example Config Files
+#### .wl (Whitelist)
+```
+src/*
+main.py
+README.md
+```
+#### .bl (Blacklist)
+```
+__pycache__
+*.pyc
+node_modules
+```
+#### .treeignore
+```
+node_modules
+.git
+```
+
+## Output
+The result will be saved in `project_prompt.md` or `project_prompt.txt` inside the `prompt-creator` folder.
+
+## Package Management
+  ```bash
+  prompt-creator --upgrade
+  ```
+  ```bash
+  prompt-creator --uninstall
+  ```
+
+
+# پرامپت کریتور
+ابزاری برای تولید پرامپت از پروژه‌های برنامه‌نویسی با قابلیت انتخاب فایل‌ها و پوشه‌ها به کمک فایل‌های پیکربندی.
+
+## نصب
+### نصب از گیتهاب (عمومی)
+```bash
+pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
+```
+### نصب از گیتهاب (خصوصی)
+```bash
+pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+```
 یا با SSH:
-
 ```bash
 pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
 ## استفاده سریع
-
 1. به ریشه پروژه بروید.
 2. دستور زیر را اجرا کنید:
    ```bash
@@ -33,42 +82,34 @@ pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
 4. الگوهای مورد نظر را در این فایل‌ها قرار دهید و مجدد دستور را اجرا کنید.
 
 ### مثال فایل .wl
-
 ```
 src/*
 main.py
 README.md
 ```
-
 ### مثال فایل .bl
-
 ```
 __pycache__
 *.pyc
 node_modules
 ```
-
 ### مثال فایل .treeignore
-
 ```
 node_modules
 .git
 ```
 
 ## خروجی
-
 خروجی در فایل `project_prompt.md` یا `project_prompt.txt` در پوشه `prompt-creator` ذخیره می‌شود.
 
 ## مدیریت بسته
-
-- ارتقا:
   ```bash
   prompt-creator --upgrade
   ```
-- حذف:
   ```bash
   prompt-creator --uninstall
   ```
+<<<<<<< HEAD
 
 ---
 
@@ -148,3 +189,5 @@ pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
   ```bash
   prompt-creator --uninstall
   ```
+=======
+>>>>>>> ed7609b (docs: English section first, Persian section second in Readme.md)
