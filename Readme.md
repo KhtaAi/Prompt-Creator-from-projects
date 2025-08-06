@@ -72,13 +72,6 @@ node_modules
 
 ---
 
-- **Uninstall:** To remove the package from your system:
-  ```bash
-  prompt-creator --uninstall
-  ```
-
----
-
 # فارسی
 
 ## 🚀 نصب
