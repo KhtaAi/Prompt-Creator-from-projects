@@ -47,17 +47,31 @@ def ensure_config_files(config_dir: Path):
     print(f"Checking for config directory: {config_dir}")
     config_dir.mkdir(exist_ok=True)
     
+    default_contents = {
+        WHITELIST_FILENAME: (
+            "src/*\nmain.*\napp.*\nsetup.*\nrequirements.*\nREADME.*\ndocs/*\n"
+        ),
+        BLACKLIST_FILENAME: (
+            "__pycache__\n*.pyc\n*.pyo\n*.log\n*.tmp\n*.bak\nnode_modules\ndist\nbuild\n.env\n.vscode\n.idea\n.git\n.DS_Store\nThumbs.db\n"
+        ),
+        TREE_IGNORE_FILENAME: (
+            "__pycache__\nnode_modules\ndist\nbuild\n.env\n.vscode\n.idea\n.git\n.DS_Store\nThumbs.db\n"
+        ),
+    }
+
     config_files = [
         config_dir / WHITELIST_FILENAME,
         config_dir / BLACKLIST_FILENAME,
         config_dir / TREE_IGNORE_FILENAME,
         # فایل summary.md به صورت پیش‌فرض ساخته نمی‌شود، کاربر باید خودش آن را بسازد
     ]
-    
+
     for f_path in config_files:
         if not f_path.exists():
             print(f"Creating missing config file: {f_path}")
-            f_path.touch()
+            content = default_contents.get(f_path.name, "")
+            with open(f_path, "w", encoding="utf-8") as f:
+                f.write(content)
 
 def check_empty_config_files(config_dir: Path):
     """بررسی می‌کند که آیا فایل‌های پیکربندی خالی هستند و از کاربر تاییدیه می‌گیرد."""
@@ -123,8 +137,14 @@ def is_path_whitelisted(path: Path, whitelist: set[str]) -> bool:
     if not whitelist:
         return False
     for pattern in whitelist:
+        # اگر pattern فقط نام یک پوشه باشد، همه فایل‌های داخل آن پوشه را نیز شامل شود
         if path.match(pattern):
             return True
+        # اگر pattern نام پوشه باشد و path داخل آن باشد
+        if (not any(c in pattern for c in "*?[]!")) and pattern:
+            # pattern فقط یک نام پوشه است
+            if str(path).startswith(pattern + os.sep) or str(path).startswith(pattern + "/"):
+                return True
     return False
 
 def create_prompt(root_dir: Path, config_dir: Path, args):
