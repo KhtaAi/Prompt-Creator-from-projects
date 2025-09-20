@@ -1,0 +1,21 @@
+# Build and installation artifacts
+/prompt_creator.egg-info/
+/build/
+/dist/
+*.egg-info/
+
+
+# Python cache
+__pycache__/
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE folders
+.vscode/
+.idea/
+
+
+Prompt-Creator-from-projects.code-workspace
+prompt-creator
