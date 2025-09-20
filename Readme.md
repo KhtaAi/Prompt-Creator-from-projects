@@ -1,220 +1,109 @@
-### How it works
 
-If a file name (like `utils.py`) is in `.bl`, that file will be excluded from the prompt. If a folder name (like `secret`) is in `.bl`, that folder and all its contents will be excluded. All other files and folders will be included in the prompt output.
+# ابزار ساخت پرامپت (Prompt Creator)
 
-# Prompt Creator
+ابزاری قدرتمند برای خط فرمان که به شما کمک می‌کند تا ساختار و محتوای کامل یک پروژه برنامه‌نویسی را در یک فایل متنی واحد جمع‌آوری کنید. این فایل خروجی برای ارائه به مدل‌های زبان بزرگ (LLMs)، مستندسازی پروژه یا بازبینی کد ایده‌آل است.
 
-A tool for generating prompts from programming projects, allowing you to select files and folders via config files and produce a structured output for LLMs or documentation.
+## ویژگی‌های کلیدی
 
-## Installation
-
-### Install from GitHub (Public)
-
-```bash
-pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
-```
-
-### Install from GitHub (Private)
-
-```bash
-pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
-```
-
-Or with SSH:
-
-```bash
-pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
-```
-
-## Quick Start
-
-1. Go to your project root.
-2. Run:
-   ```bash
-   prompt-creator --markdown
-   ```
-3. The `prompt-creator` folder and `.wl`, `.bl`, `.treeignore` files will be created.
-4. Add your desired patterns to these files and run the command again.
-5. The `prompt-creator` folder and `.bl`, `.treeignore` files will be created.
-6. Add your desired patterns to these files and run the command again.
-
-### Example Config Files
-
-#### .bl (Blacklist)
-
-```
-secret
-utils.py
-__pycache__
-*.pyc
-node_modules
-```
-
-#### .treeignore
-
-```
-node_modules
-.git
-```
-
-## Output
-
-The result will be saved in `project_prompt.md` or `project_prompt.txt` inside the `prompt-creator` folder.
-
-## Package Management
-
-```bash
-prompt-creator --upgrade
-```
-
-```bash
-prompt-creator --uninstall
-```
-
-# پرامپت کریتور
-
-ابزاری برای تولید پرامپت از پروژه‌های برنامه‌نویسی با قابلیت انتخاب فایل‌ها و پوشه‌ها به کمک فایل‌های پیکربندی.
-
-## نصب
-
-### نصب از گیتهاب (عمومی)
-
-```bash
-pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
-```
-
-### نصب از گیتهاب (خصوصی)
-
-```bash
-pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
-```
-
-یا با SSH:
-
-```bash
-pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
-```
-
-## استفاده سریع
-
-1. به ریشه پروژه بروید.
-2. دستور زیر را اجرا کنید:
-   ```bash
-   prompt-creator --markdown
-   ```
-3. پوشه `prompt-creator` و فایل‌های `.wl`, `.bl`, `.treeignore` ساخته می‌شوند.
-4. الگوهای مورد نظر را در این فایل‌ها قرار دهید و مجدد دستور را اجرا کنید.
-
-### مثال فایل .wl
-
-```
-src/*
-main.py
-README.md
-```
-
-### مثال فایل .bl
-
-```
-__pycache__
-*.pyc
-node_modules
-```
-
-### مثال فایل .treeignore
-
-```
-node_modules
-.git
-```
-
-## خروجی
-
-خروجی در فایل `project_prompt.md` یا `project_prompt.txt` در پوشه `prompt-creator` ذخیره می‌شود.
-
-## مدیریت بسته
-
-```bash
-prompt-creator --upgrade
-```
-
-```bash
-prompt-creator --uninstall
-```
-
-<<<<<<< HEAD
+- **پیکربندی آسان:** با استفاده از فایل‌های ساده، مشخص کنید کدام بخش‌های پروژه نادیده گرفته شوند.
+- **نمایش ساختار درختی:** به صورت خودکار یک نمودار درختی تمیز از ساختار پروژه شما ایجاد می‌کند.
+- **خلاصه پروژه:** امکان اضافه کردن یک فایل خلاصه در ابتدای خروجی نهایی.
+- **فرمت‌های متنوع:** خروجی را به صورت فایل متنی (`.txt`) یا Markdown (`.md`) دریافت کنید.
+- **مدیریت ساده:** ابزار را به راحتی از طریق خط فرمان آپدیت یا حذف کنید.
 
 ---
 
-# فارسی
-
 ## 🚀 نصب
 
-دستورالعمل نصب بسته به عمومی یا خصوصی بودن ریپازیتوری متفاوت است.
+**پیش‌نیاز:** برای نصب، ابتدا باید **[Git](https://git-scm.com/downloads)** روی سیستم شما نصب شده باشد.
 
-**نصب در ویندوز:** این دستورات در ترمینال‌های ویندوز مانند Command Prompt یا PowerShell نیز کار می‌کنند، اما ابتدا باید **[Git for Windows](https://git-scm.com/download/win)** را نصب کنید.
-
-### برای ریپازیتوری‌های عمومی (Public)
-
-اگر ریپازیتوری عمومی باشد، می‌توانید آن را با این دستور ساده نصب کنید:
+دستور زیر را در ترمینال خود اجرا کنید تا بسته از ریپازیتوری عمومی گیت‌هاب نصب شود:
 
 ```bash
 pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
 ```
 
-### برای ریپازیتوری‌های خصوصی (Private)
+### نصب از ریپازیتوری خصوصی (Private)
 
-اگر ریپازیتوری خصوصی باشد، برای نصب باید با استفاده از توکن دسترسی شخصی (PAT) یا کلید SSH احراز هویت کنید.
+- **با توکن دسترسی شخصی (PAT):**
+  ```bash
+  pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+  ```
+- **با SSH:**
+  ```bash
+  pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
+  ```
 
-**۱. استفاده از توکن دسترسی شخصی (PAT):**
+---
 
-۱. یک [PAT جدید](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) با دسترسی `repo` بسازید.
-۲. دستور زیر را اجرا کرده و `<YOUR_PAT>` را با توکن خود جایگزین کنید:
+## ⚙️ راهنمای استفاده سریع
 
-```bash
-pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+۱. **به ریشه پروژه بروید:** با ترمینال وارد پوشه اصلی پروژه‌ای شوید که می‌خواهید برای آن پرامپت بسازید.
+
+۲. **دستور را اجرا کنید:** برای دریافت خروجی Markdown، دستور زیر را اجرا کنید:
+   ```bash
+   prompt-creator --markdown
+   ```
+   با اجرای این دستور برای اولین بار، یک پوشه به نام `prompt-creator` در ریشه پروژه شما ایجاد می‌شود که شامل فایل‌های پیکربندی اولیه است.
+
+۳. **فایل‌ها را پیکربندی کنید:** فایل‌های داخل پوشه `prompt-creator` را مطابق نیاز خود ویرایش کنید (توضیحات کامل در بخش بعد آمده است).
+
+۴. **دستور را دوباره اجرا کنید:** پس از تنظیم پیکربندی، دستور را مجدداً اجرا کنید تا فایل خروجی نهایی بر اساس قوانین شما ساخته شود.
+
+---
+
+## 🔧 پیکربندی
+
+رفتار ابزار توسط فایل‌های داخل پوشه `prompt-creator` کنترل می‌شود:
+
+#### `.bl` (لیست سیاه - Blacklist)
+فایل‌ها یا پوشه‌هایی که می‌خواهید **محتوای آن‌ها به طور کامل نادیده گرفته شود** را در این فایل لیست کنید. در هر خط یک الگو بنویسید.
+
+**مثال:**
+```
+# پوشه‌ها
+.git
+.vscode
+__pycache__
+node_modules
+
+# فایل‌های خاص
+.env
+secret_keys.json
+
+# الگوهای فایل
+*.pyc
+*.log
 ```
 
-**۲. استفاده از SSH:**
+#### `.treeignore`
+فایل‌ها یا پوشه‌هایی که می‌خواهید **فقط از نمایش ساختار درختی پروژه حذف شوند** را در این فایل لیست کنید. این کار به تمیزتر شدن نمودار درختی کمک می‌کند.
 
-اگر کلیدهای SSH را برای حساب گیت‌هاب خود تنظیم کرده‌اید، می‌توانید از آدرس SSH استفاده کنید:
-
-```bash
-pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
+**مثال:**
+```
+node_modules
+.git
+.vscode
 ```
 
-## ⚙️ نحوه استفاده
+#### `summary.md` (اختیاری)
+می‌توانید به صورت دستی این فایل را بسازید و خلاصه‌ای از پروژه خود را در آن بنویسید. اگر هنگام اجرای دستور از فلگ `--include-summary` استفاده کنید، محتوای این فایل در ابتدای خروجی نهایی قرار می‌گیرد.
 
-پس از نصب، دستور `prompt-creator` به صورت سراسری در ترمینال شما در دسترس خواهد بود.
+---
 
-### ۱. ساخت پرامپت
+## 💡 دستورات خط فرمان (Flags)
 
-۱. به پوشه ریشه پروژه‌ای که می‌خواهید برای آن پرامپت بسازید، بروید.
-۲. دستور زیر را اجرا کنید:
-`bash
-    prompt-creator
-    `
-یا برای فرمت Markdown:
-`bash
-    prompt-creator --markdown
-    `
-۳. بار اولی که دستور را اجرا می‌کنید، یک پوشه به نام `prompt-creator` در ریشه پروژه شما ایجاد می‌شود که شامل سه فایل خالی است: `.wl`، `.bl` و `.treeignore`.
-۴. این فایل‌ها را با قوانین مورد نظر خود پر کنید (بخش **پیکربندی** را ببینید).
-۵. دستور را دوباره اجرا کنید تا پرامپت بر اساس قوانین شما ساخته شود. فایل خروجی در داخل پوشه `prompt-creator` ذخیره خواهد شد.
+می‌توانید از فلگ‌های زیر برای سفارشی‌سازی خروجی استفاده کنید:
 
-### ۲. پیکربندی
+- `--markdown`: خروجی را در فرمت Markdown (`project_prompt.md`) ایجاد می‌کند. (در غیر این صورت، خروجی به صورت متن ساده در `project_prompt.txt` خواهد بود).
+- `--include-summary`: محتوای فایل `prompt-creator/summary.md` را به ابتدای پرامپت اضافه می‌کند.
+- `--remove-blanks`: تمام خطوط خالی را از محتوای فایل‌ها حذف می‌کند تا خروجی فشرده‌تر شود.
 
-رفتار ابزار توسط سه فایل داخل پوشه `prompt-creator` کنترل می‌شود:
+---
 
-- `.wl` (لیست سفید): فایل‌ها و پوشه‌هایی که باید در پرامپت گنجانده شوند را مشخص کنید. در هر خط یک الگو وارد کنید (مثلاً `src/main.py` یا `components/`).
-- `.bl` (لیست سیاه): فایل‌ها و پوشه‌هایی که محتوای آن‌ها باید نادیده گرفته شود را مشخص کنید.
-- `.treeignore`: فایل‌ها و پوشه‌هایی که باید از نمایش ساختار درختی پروژه حذف شوند را مشخص کنید (مانند `node_modules` یا `.git`).
+## 📦 مدیریت بسته
 
-اگر هر یک از این فایل‌ها خالی باشد، ابزار قبل از ادامه به شما هشدار خواهد داد.
-
-### ۳. مدیریت بسته
-
-- **ارتقا (Upgrade):** برای دریافت آخرین نسخه از ریپازیتوری:
+- **ارتقا (Upgrade):** برای دریافت آخرین نسخه از گیت‌هاب:
   ```bash
   prompt-creator --upgrade
   ```
@@ -222,5 +111,118 @@ pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
   ```bash
   prompt-creator --uninstall
   ```
-  =======
-  > > > > > > > ed7609b (docs: English section first, Persian section second in Readme.md)
+
+---
+
+# Prompt Creator (English)
+
+A powerful command-line tool to generate a single, comprehensive text file from the structure and content of a programming project. This output file is ideal for feeding to Large Language Models (LLMs), documenting a project, or for code reviews.
+
+## Key Features
+
+- **Easy Configuration:** Use simple files to specify which parts of the project to ignore.
+- **Tree Structure Display:** Automatically generates a clean tree diagram of your project structure.
+- **Project Summary:** Option to prepend a summary file to the final output.
+- **Multiple Formats:** Get the output as a plain text file (`.txt`) or in Markdown (`.md`).
+- **Simple Management:** Easily update or uninstall the tool via the command line.
+
+---
+
+## 🚀 Installation
+
+**Prerequisite:** You must have **[Git](https://git-scm.com/downloads)** installed on your system.
+
+Run the following command in your terminal to install the package from the public GitHub repository:
+
+```bash
+pip install git+https://github.com/KhtaAi/Prompt-Creator-from-projects.git
+```
+
+### For Private Repositories
+
+- **With a Personal Access Token (PAT):**
+  ```bash
+  pip install git+https://<YOUR_PAT>@github.com/KhtaAi/Prompt-Creator-from-projects.git
+  ```
+- **With SSH:**
+  ```bash
+  pip install git+ssh://git@github.com/KhtaAi/Prompt-Creator-from-projects.git
+  ```
+
+---
+
+## ⚙️ Quick Start Guide
+
+1.  **Navigate to your project root:** Open your terminal in the main directory of the project for which you want to create a prompt.
+
+2.  **Run the command:** To get a Markdown output, run:
+    ```bash
+    prompt-creator --markdown
+    ```
+    The first time you run this, a `prompt-creator` directory containing initial configuration files will be created in your project root.
+
+3.  **Configure the files:** Edit the files inside the `prompt-creator` directory to match your needs (see the next section for a full explanation).
+
+4.  **Run the command again:** Once you've set up your configuration, run the command again to generate the final output file based on your rules.
+
+---
+
+## 🔧 Configuration
+
+The tool's behavior is controlled by files within the `prompt-creator` directory:
+
+#### `.bl` (Blacklist)
+List the files or folders whose **content should be completely ignored** in this file. Add one pattern per line.
+
+**Example:**
+```
+# Folders
+.git
+.vscode
+__pycache__
+node_modules
+
+# Specific files
+.env
+secret_keys.json
+
+# File patterns
+*.pyc
+*.log
+```
+
+#### `.treeignore`
+List files or folders that you want to **exclude only from the tree structure view**. This helps keep the tree diagram clean.
+
+**Example:**
+```
+node_modules
+.git
+.vscode
+```
+
+#### `summary.md` (Optional)
+You can manually create this file and write a summary of your project in it. If you use the `--include-summary` flag when running the command, its content will be prepended to the final output.
+
+---
+
+## 💡 Command-Line Flags
+
+You can use the following flags to customize the output:
+
+- `--markdown`: Creates the output in Markdown format (`project_prompt.md`). (Otherwise, the output will be plain text in `project_prompt.txt`).
+- `--include-summary`: Adds the content of `prompt-creator/summary.md` to the beginning of the prompt.
+- `--remove-blanks`: Removes all blank lines from the file contents for a more compact output.
+
+---
+
+## 📦 Package Management
+
+- **Upgrade:** To get the latest version from GitHub:
+  ```bash
+  prompt-creator --upgrade
+  ```
+- **Uninstall:** To completely remove the package from your system:
+  ```bash
+  prompt-creator --uninstall
+  ```
