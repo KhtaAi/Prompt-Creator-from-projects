@@ -1,8 +1,7 @@
 from setuptools import setup, find_packages
-
 setup(
     name='prompt-creator',
-    version='1.0.0',
+    version='1.1.0',
     packages=find_packages(),
     author='Your Name',  # نام خود را اینجا وارد کنید
     author_email='your.email@example.com',  # ایمیل خود را اینجا وارد کنید
